@@ -1,6 +1,11 @@
 'use client'
 import styled from 'styled-components'
 
+const getThemeColors =
+    (prop: string) =>
+    ({ theme }: any) =>
+        theme.colors[prop]
+
 const Bun = styled.button`
     width: 2.8rem;
     height: 2.8em;
@@ -16,18 +21,19 @@ const Burger = styled.div<{
     $index?: number
     $burgerColor?: string
 }>`
-    width: ${(props) => (props.$isOpen && props.$index === 2 ? '0' : '2.5rem')};
+    width: ${({ $isOpen, $index }) =>
+        $isOpen && $index === 2 ? '0' : '2.5rem'};
     height: 0.4em;
     border-radius: 10px;
-    background: ${(props) => props.theme?.colors?.secondary || 'black'};
+    background: ${getThemeColors('secondary')};
     transform-origin: 1px;
     transition: all 0.3s linear;
     margin: auto;
-    transform: ${(props) =>
-        props.$isOpen &&
-        (props.$index === 1
+    transform: ${({ $isOpen, $index }) =>
+        $isOpen &&
+        ($index === 1
             ? 'rotate(45deg) translateX(5%);'
-            : props.$index === 2
+            : $index === 2
             ? 'translateX(0%)'
             : 'rotate(-45deg) translateX(5%);')};
 `

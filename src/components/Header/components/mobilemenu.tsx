@@ -3,15 +3,22 @@
 import React from 'react'
 import styled from 'styled-components'
 
+const getThemeColors =
+    (prop: string) =>
+    ({ theme }: any) =>
+        theme.colors[prop]
+
+const getProps = (prop: string) => (props: any) => props[prop]
+
 const MobileMenuWrapper = styled.div<{ $height: number; $toggle: boolean }>`
-    visibility: ${(props) => (props.$toggle ? 'visible' : 'hidden')};
+    visibility: ${({ $toggle }) => ($toggle ? 'visible' : 'hidden')};
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: ${(props) => props.$height}px;
+    top: ${getProps('height')}px;
+    height: calc(100vh - ${getProps('height')}px);
     right: 0;
-    background-color: ${({ theme }) => theme?.colors?.primary || 'white'};
-    height: calc(100vh - ${(props) => props.$height}px);
+    background-color: ${getThemeColors('primary')};
     width: 100%;
     max-width: 300px;
     overflow-y: auto;
@@ -22,17 +29,17 @@ const MenuItem = styled.a`
     margin-left: 0.5rem;
     padding: 1rem;
     text-decoration: none;
-    color: ${({ theme }) => theme?.colors?.text || 'black'};
+    color: ${getThemeColors('text')};
     font-weight: bold;
     transition: background-color 0.3s linear;
     &:hover {
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: ${getThemeColors('hoverBackground')};
     }
 `
 
 const SubMenuWrapper = styled.div`
     margin-left: 1rem;
-    background-color: ${({ theme }) => theme?.colors?.primary || 'white'};
+    background-color: ${getThemeColors('primary')};
     position: relative;
     display: flex;
     flex-direction: column;
@@ -40,11 +47,11 @@ const SubMenuWrapper = styled.div`
 const SubMenuItem = styled.a`
     padding: 0.5rem 1rem;
     text-decoration: none;
-    color: ${({ theme }) => theme?.colors?.text || 'black'};
+    color: ${getThemeColors('text')};
     font-weight: normal;
     transition: background-color 0.3s linear;
     &:hover {
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: ${getThemeColors('hoverBackground')};
     }
 `
 
