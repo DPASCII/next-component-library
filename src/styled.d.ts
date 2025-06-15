@@ -6,6 +6,10 @@ declare module 'styled-components' {
             primary: string
             secondary: string
             hoverBackground: string
+            button: string
+            buttonText: string
+            buttonHover: string
+            buttonHoverText: string
             text: string
         }
         maxWidth: number
