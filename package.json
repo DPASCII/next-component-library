@@ -1,0 +1,30 @@
+{
+  "name": "next-component-library",
+  "version": "0.0.1",
+  "description": "next component library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DPASCII/next-component-library.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DPASCII/next-component-library/issues"
+  },
+  "homepage": "https://github.com/DPASCII/next-component-library#readme",
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@types/styled-components": "^5.1.34",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "styled-components": "^6.1.19"
+  }
+}
