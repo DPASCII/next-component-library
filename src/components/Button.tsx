@@ -16,8 +16,8 @@ const StyledButton = styled.button`
     }
 `
 
-const Button = ({ children, ...rest }: { children: React.ReactNode }) => {
-    return <StyledButton {...rest}>{children}</StyledButton>
+const Button = ({ label, ...rest }: { label: string }) => {
+    return <StyledButton {...rest}>{label}</StyledButton>
 }
 
 export default Button
