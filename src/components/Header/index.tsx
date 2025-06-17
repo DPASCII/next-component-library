@@ -44,7 +44,7 @@ const MenuWrapper = styled.div<{ $number: number }>`
     display: none;
     @media (min-width: ${getThemeWidth('windowWidth')}px) {
         display: grid;
-        grid-template-columns: repeat(${(props) => props.$number}, 1fr);
+        grid-template-columns: repeat(${({ $number }) => $number}, 1fr);
     }
 `
 
