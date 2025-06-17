@@ -7,11 +7,21 @@ import Hamburger from './components/hamburger'
 import DesktopMenu from './components/desktopmenu'
 import MobileMenu from './components/mobilemenu'
 
+const getThemeColors =
+    (prop: string) =>
+    ({ theme }: any) =>
+        theme.colors[prop]
+
+const getThemeWidth =
+    (prop: string) =>
+    ({ theme }: any) =>
+        theme[prop]
+
 const NavBarContainer = styled.div<{
-    $height?: number
+    $height: number
 }>`
-    background-color: ${(props) => props.theme?.colors?.primary || 'white'};
-    height: ${(props) => props.$height}px;
+    background-color: ${getThemeColors('primary')};
+    height: ${({ $height }) => $height}px;
     display: grid;
 `
 
@@ -21,7 +31,7 @@ const NavBarWrapper = styled.div`
     display: grid;
     height: 100%;
     width: 100%;
-    max-width: ${(props) => props.theme?.maxWidth}px;
+    max-width: ${getThemeWidth('windowWidth')}px;
 `
 
 const LogoWrapper = styled.div`
@@ -32,9 +42,9 @@ const LogoWrapper = styled.div`
 
 const MenuWrapper = styled.div<{ $number: number }>`
     display: none;
-    @media (min-width: ${(props) => props.theme?.maxWidth}px) {
+    @media (min-width: ${getThemeWidth('windowWidth')}px) {
         display: grid;
-        grid-template-columns: repeat(${(props) => props.$number}, 1fr);
+        grid-template-columns: repeat(${({ $number }) => $number}, 1fr);
     }
 `
 
@@ -45,14 +55,14 @@ const Trigger = styled.div`
     align-content: center;
     justify-self: end;
     padding: 0 1rem;
-    @media (min-width: ${(props) => props.theme?.maxWidth}px) {
+    @media (min-width: ${getThemeWidth('windowWidth')}px) {
         display: none;
     }
 `
 
 const StyledImage = styled(Image)`
     justify-self: start;
-    @media (min-width: ${(props) => props.theme?.maxWidth}px) {
+    @media (min-width: ${getThemeWidth('windowWidth')}px) {
         justify-self: center;
     }
 `
@@ -86,7 +96,7 @@ const Header: React.FC<NavBarProps> = (props) => {
 
     const [hamburgerOpen, setHamburgerOpen] = useState(false)
     const theme = useTheme()
-    const desktopBreakpoint = theme?.maxWidth
+    const desktopBreakpoint = theme.windowWidth
 
     const toggleHamburger = useCallback(
         () => setHamburgerOpen((prev) => !prev),

@@ -11,7 +11,7 @@ export const theme: DefaultTheme = {
         buttonHoverText: '#fff',
         text: 'black',
     },
-    maxWidth: 1320,
+    windowWidth: 1320,
 }
 
 export default theme

@@ -12,6 +12,6 @@ declare module 'styled-components' {
             buttonHoverText: string
             text: string
         }
-        maxWidth: number
+        windowWidth: number
     }
 }
