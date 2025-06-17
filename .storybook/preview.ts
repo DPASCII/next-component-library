@@ -7,7 +7,7 @@ export const decorators = [
         themes: {
             light: theme,
         },
-        defaultTheme: 'light',
+        defaultTheme: 'theme',
         Provider: ThemeProvider,
     }),
 ]
