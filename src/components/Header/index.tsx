@@ -60,7 +60,7 @@ const Trigger = styled.div`
     }
 `
 
-const StyledImage = styled(Image)`
+const StyledImage = styled.img`
     justify-self: start;
     @media (min-width: ${getThemeWidth('windowWidth')}px) {
         justify-self: center;
