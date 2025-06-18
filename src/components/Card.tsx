@@ -6,25 +6,25 @@ const getThemeColors =
     ({ theme }: any) =>
         theme.colors[prop]
 
-const CardWrapper = styled.div<{ $height: number; $width: number }>`
+const CardWrapper = styled.div<{
+    $height: number
+    $width: number
+    $src: string
+}>`
     position: absolute;
     display: grid;
-    grid-template-rows: 1fr 0.3fr;
+    grid-template-rows: 0.3fr;
     grid-template-columns: 1fr;
+    align-content: end;
     height: ${({ $height }) => $height}px;
     width: ${({ $width }) => $width}px;
+    background-image: url(${({ $src }) => $src});
+    background-repeat: no-repeat;
+    background-size: auto 110%;
     border: 1px solid black;
-`
-
-const StyledImage = styled.img`
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: top;
-    transition: all linear 0.3s;
-    transform: translateY(3%);
+    background-position: top;
     &:hover {
-        transform: translateY(0%);
+        background-position: px -16px;
     }
 `
 
@@ -52,9 +52,7 @@ const Card = ({
     alt?: string
 }) => {
     return (
-        <CardWrapper $height={height} $width={width}>
-            <StyledImage src={src} alt={alt} />
-
+        <CardWrapper $src={src} $height={height} $width={width}>
             <TextWrapper>{content}</TextWrapper>
         </CardWrapper>
     )
