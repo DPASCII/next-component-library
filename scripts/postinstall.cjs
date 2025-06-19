@@ -1,11 +1,18 @@
+// scripts/postinstall.cjs
 const fs = require('fs')
 const path = require('path')
 
 const libThemePath = path.resolve(__dirname, '../src/theme')
-const targetThemePath = path.resolve(process.cwd(), 'src/theme')
+const projectSrcPath = path.resolve(
+    process.env.npm_config_local_prefix || '',
+    'src'
+)
+const targetThemePath = path.resolve(projectSrcPath, 'theme')
 
 function copyDir(src, dest) {
-    if (!fs.existsSync(dest)) fs.mkdirSync(dest, { recursive: true })
+    if (!fs.existsSync(dest)) {
+        fs.mkdirSync(dest, { recursive: true })
+    }
 
     for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
         const srcEntry = path.join(src, entry.name)
@@ -21,7 +28,7 @@ function copyDir(src, dest) {
 
 if (fs.existsSync(libThemePath)) {
     copyDir(libThemePath, targetThemePath)
-    console.log('✔ Theme copied to consuming project')
+    console.log('✓ Theme copied to consuming project at', targetThemePath)
 } else {
-    console.warn('⚠ Theme folder not found:', libThemePath)
+    console.warn('⚠ Theme folder not found in:', libThemePath)
 }
