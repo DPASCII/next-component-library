@@ -9,51 +9,81 @@ const getThemeColors =
 const CardWrapper = styled.div<{
     $height: number
     $width: number
-    $src: string
 }>`
-    position: absolute;
     display: grid;
-    grid-template-rows: 0.3fr;
-    grid-template-columns: 1fr;
-    align-content: end;
+    grid-template-rows: 1fr 0.3fr;
     height: ${({ $height }) => $height}px;
     width: ${({ $width }) => $width}px;
-    background-image: url(${({ $src }) => $src});
-    background-repeat: no-repeat;
-    background-size: auto 110%;
+    overflow: hidden;
     border: 1px solid black;
-    background-position: top;
+`
+
+const ImgWrapper = styled.div`
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+`
+
+const StyledImg = styled.img<{ $height: number }>`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all linear 0.5s;
     &:hover {
-        background-position: px -16px;
+        opacity: 70%;
+        transform: scale(98%);
     }
+    border: 1px solid black;
+`
+
+const StyledLink = styled.a`
+    text-decoration: none;
 `
 
 const TextWrapper = styled.div`
-    z-index: 1;
-    position: relative;
-    bottom: 0;
-    padding: 16px;
-    background-color: ${getThemeColors('secondary')};
-    color: ${getThemeColors('secondaryText')};
-    overflow: hidden;
+    grid-row: 2;
+    color: ${getThemeColors('text')};
+    padding: 8px 0;
+    h1 {
+        margin: 0;
+    }
+    h2 {
+        margin: 0;
+        color: gray;
+    }
 `
 
 const Card = ({
     height = 500,
     width = 500,
-    content,
-    src,
+    text,
+    subText,
+    link,
+    imgSrc,
     alt = 'card image',
 }: {
     height: number
     width: number
-    content: string
-    src: string
-    alt?: string
+    text: string
+    subText?: string
+    link?: string
+    imgSrc: string
+    alt: string
 }) => {
     return (
-        <CardWrapper $src={src} $height={height} $width={width}>
-            <TextWrapper>{content}</TextWrapper>
+        <CardWrapper $height={height} $width={width}>
+            <ImgWrapper>
+                <StyledLink href={link}>
+                    <StyledImg $height={height} src={imgSrc} alt={alt} />
+                </StyledLink>
+            </ImgWrapper>
+            <TextWrapper>
+                <h1>
+                    <StyledLink href={link}>{text}</StyledLink>
+                </h1>
+                {subText && <h2>{subText}</h2>}
+            </TextWrapper>
         </CardWrapper>
     )
 }

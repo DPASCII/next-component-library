@@ -12,7 +12,7 @@ export const Primary: Story = {
     args: {
         height: 500,
         width: 500,
-        src: '',
-        content: 'primary',
+        imgSrc: '',
+        text: 'primary',
     },
 }
