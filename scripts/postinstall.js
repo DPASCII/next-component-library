@@ -2,21 +2,12 @@ const fs = require('fs')
 const path = require('path')
 
 const libThemePath = path.resolve(__dirname, '../src/theme')
-const projectSrcPath = path.resolve(process.cwd(), 'src')
-const targetThemePath = path.resolve(projectSrcPath, 'theme')
-
-if (!fs.existsSync(projectSrcPath)) {
-    fs.mkdirSync(projectSrcPath, { recursive: true })
-}
+const targetThemePath = path.resolve(process.cwd(), 'src/theme')
 
 function copyDir(src, dest) {
-    if (!fs.existsSync(dest)) {
-        fs.mkdirSync(dest, { recursive: true })
-    }
+    if (!fs.existsSync(dest)) fs.mkdirSync(dest, { recursive: true })
 
-    const entries = fs.readdirSync(src, { withFileTypes: true })
-
-    for (const entry of entries) {
+    for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
         const srcEntry = path.join(src, entry.name)
         const destEntry = path.join(dest, entry.name)
 
@@ -26,6 +17,13 @@ function copyDir(src, dest) {
             fs.copyFileSync(srcEntry, destEntry)
         }
     }
+}
+
+if (fs.existsSync(libThemePath)) {
+    copyDir(libThemePath, targetThemePath)
+    console.log('✔ Theme copied to consuming project')
+} else {
+    console.warn('⚠ Theme folder not found:', libThemePath)
 }
 
 copyDir(libThemePath, targetThemePath)
