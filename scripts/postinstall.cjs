@@ -27,3 +27,5 @@ function copyDir(src, dest) {
         }
     }
 }
+
+copyDir(libThemePath, targetThemePath)
