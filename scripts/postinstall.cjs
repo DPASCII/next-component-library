@@ -28,7 +28,6 @@ function copyDir(src, dest) {
 
 if (fs.existsSync(libThemePath)) {
     copyDir(libThemePath, targetThemePath)
-    console.log('✓ Theme copied to consuming project at', targetThemePath)
 } else {
-    console.warn('⚠ Theme folder not found in:', libThemePath)
+    return
 }
