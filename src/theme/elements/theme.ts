@@ -10,6 +10,7 @@ export const theme: DefaultTheme = {
         buttonHover: '#0056b3',
         buttonHoverText: '#fff',
         text: 'black',
+        secondaryText: 'white',
     },
     windowWidth: 1320,
 }
