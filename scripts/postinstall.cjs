@@ -25,5 +25,3 @@ if (fs.existsSync(libThemePath)) {
 } else {
     console.warn('⚠ Theme folder not found:', libThemePath)
 }
-
-copyDir(libThemePath, targetThemePath)
