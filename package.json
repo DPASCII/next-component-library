@@ -8,10 +8,6 @@
         ".": {
             "import": "./src/index.js",
             "types": "./src/index.ts"
-        },
-        "./theme": {
-            "import": "./src/theme/index.js",
-            "types": "./src/theme/index.ts"
         }
     },
     "files": [
