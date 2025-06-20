@@ -16,7 +16,7 @@
     "scripts": {
         "prepare": "npm run build",
         "build": "rm -rf dist && tsup src/index.ts --format esm,cjs --dts --out-dir dist",
-        "postinstall": "node scripts/postinstall.cjs",
+        // "postinstall": "node scripts/postinstall.cjs",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build"
     },
