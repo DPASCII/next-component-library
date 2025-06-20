@@ -3,7 +3,7 @@
 import { ThemeProvider } from 'styled-components'
 import defaultTheme from './theme'
 
-export default function ThemeRegistry({
+export default function ThemeOverlay({
     theme = defaultTheme,
     children,
 }: {
