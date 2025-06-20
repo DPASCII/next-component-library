@@ -1,2 +1,2 @@
-export { default as ThemeRegistry } from './elements/ThemeRegistry'
+export { default as ThemeOverlay } from './elements/ThemeOverlay'
 export { default as theme } from './elements/theme'
