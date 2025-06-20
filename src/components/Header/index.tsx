@@ -120,7 +120,7 @@ const Header: React.FC<NavBarProps> = (props) => {
 
         return () => window.removeEventListener('resize', handleResize)
     }, [desktopBreakpoint])
-
+    console.log('Header props.pages:', pages)
     return (
         <NavBarContainer $height={height} {...rest}>
             <NavBarWrapper>
