@@ -71,7 +71,9 @@ const DesktopMenu: React.FC<DesktopMenuProps> = (props) => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
-            <MenuItem $menuWidth={menuWidth}>{page.item || 'NO ITEM'}</MenuItem>
+            <MenuItem $menuWidth={menuWidth} href={page.link}>
+                {page.item || 'NO ITEM'}
+            </MenuItem>
             {isDropdownVisible && (
                 <SubMenuWrapper>
                     {page.subPages &&
