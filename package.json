@@ -11,10 +11,10 @@
         }
     },
     "files": [
-        "src",
-        "scripts"
+        "dist"
     ],
     "scripts": {
+        "prepare": "npm run build",
         "build": "tsup src/index.ts --format esm,cjs --dts --out-dir dist",
         "postinstall": "node scripts/postinstall.cjs",
         "storybook": "storybook dev -p 6006",
