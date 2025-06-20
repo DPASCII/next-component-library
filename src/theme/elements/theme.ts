@@ -2,15 +2,15 @@ import { DefaultTheme } from 'styled-components'
 
 export const theme: DefaultTheme = {
     colors: {
-        primary: '#0070f3',
-        secondary: '#1c1c1e',
+        primary: '#B6D0E2',
+        secondary: '#B5C7EB',
         hoverBackground: 'white',
         button: '#007bff',
         buttonText: '#000',
         buttonHover: '#0056b3',
         buttonHoverText: '#fff',
         text: 'black',
-        secondaryText: 'white',
+        secondaryText: 'black',
     },
     windowWidth: 1320,
     breakpoints: {
