@@ -2,20 +2,18 @@
     "name": "next-component-library",
     "version": "0.0.1",
     "description": "Next.js component library",
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
+    "main": "sec/index.ts",
+    "types": "src/index.ts",
     "exports": {
         ".": {
-            "import": "./dist/index.js",
-            "types": "./dist/index.d.ts"
+            "import": "./src/index.ts",
+            "types": "./src/index.ts"
         }
     },
     "files": [
-        "dist"
+        "src"
     ],
     "scripts": {
-        "prepare": "npm run build",
-        "build": "rm -rf dist && tsup src/index.ts --format esm,cjs --dts --out-dir dist",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build"
     },
