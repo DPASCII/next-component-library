@@ -67,6 +67,7 @@ const Trigger = styled.div`
 
 const StyledImage = styled.img`
     justify-self: start;
+    object-fit: contain;
     @media (min-width: ${getThemeBreakpoints('desktop')}px) {
         justify-self: center;
     }
@@ -126,12 +127,7 @@ const Header: React.FC<NavBarProps> = (props) => {
             <NavBarWrapper>
                 {logo && (
                     <LogoWrapper>
-                        <StyledImage
-                            src={logo}
-                            alt={alt}
-                            layout="fill"
-                            style={{ objectFit: 'contain' }}
-                        />
+                        <StyledImage src={logo} alt={alt} />
                     </LogoWrapper>
                 )}
                 <Trigger onClick={toggleHamburger}>
