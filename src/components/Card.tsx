@@ -15,7 +15,6 @@ const CardWrapper = styled.div<{
     height: ${({ $height }) => $height}px;
     width: ${({ $width }) => $width}px;
     overflow: hidden;
-    border: 1px solid black;
 `
 
 const ImgWrapper = styled.div`
@@ -34,7 +33,6 @@ const StyledImg = styled.img<{ $height: number }>`
         opacity: 70%;
         transform: scale(98%);
     }
-    border: 1px solid black;
 `
 
 const StyledLink = styled.a`
@@ -57,10 +55,10 @@ const TextWrapper = styled.div`
 const Card = ({
     height = 500,
     width = 500,
-    text,
+    text = 'Place Title Here',
     subText,
     link,
-    imgSrc,
+    imgSrc = 'https://www.shutterstock.com/image-vector/no-photo-thumbnail-graphic-element-600nw-2311073121.jpg',
     alt = 'card image',
 }: {
     height: number
