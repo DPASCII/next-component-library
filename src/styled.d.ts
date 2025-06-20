@@ -14,5 +14,10 @@ declare module 'styled-components' {
             secondaryText: string
         }
         windowWidth: number
+        breakpoints: {
+            desktop: number
+            tablet: number
+            mobile: number
+        }
     }
 }
