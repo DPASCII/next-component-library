@@ -17,7 +17,7 @@ const MenuWrapper = styled.div`
 const MenuItem = styled.a<{ $menuWidth: number }>`
     cursor: pointer;
     width: ${({ $menuWidth }) => $menuWidth}px;
-    color: ${getThemeColors('text')};
+    color: ${getThemeColors('text') || 'black'};
     text-align: center;
     align-content: center;
     justify-content: center;
@@ -71,7 +71,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = (props) => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
-            <MenuItem $menuWidth={menuWidth}>{page.item}</MenuItem>
+            <MenuItem $menuWidth={menuWidth}>{page.item || 'NO ITEM'}</MenuItem>
             {isDropdownVisible && (
                 <SubMenuWrapper>
                     {page.subPages &&
