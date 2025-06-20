@@ -9,4 +9,7 @@ export default defineConfig({
     sourcemap: true,
     outDir: 'dist',
     external: ['react', 'react-dom', 'styled-components'],
+    banner: {
+        js: '"use client";',
+    },
 })
