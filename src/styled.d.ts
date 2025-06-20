@@ -11,6 +11,7 @@ declare module 'styled-components' {
             buttonHover: string
             buttonHoverText: string
             text: string
+            secondaryText: string
         }
         windowWidth: number
     }
