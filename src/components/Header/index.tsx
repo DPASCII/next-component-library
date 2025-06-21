@@ -17,11 +17,6 @@ const getThemeWidth =
     ({ theme }: any) =>
         theme[prop]
 
-const getThemeBreakpoints =
-    (prop: string) =>
-    ({ theme }: any) =>
-        theme.breakpoints[prop]
-
 const NavBarContainer = styled.div<{
     $height: number
 }>`
@@ -47,7 +42,7 @@ const LogoWrapper = styled.div`
 
 const MenuWrapper = styled.div<{ $number: number }>`
     display: none;
-    @media (min-width: ${getThemeBreakpoints('desktop')}px) {
+    @media (min-width: ${getThemeWidth('windowWidth')}px) {
         display: grid;
         grid-template-columns: repeat(${({ $number }) => $number}, 1fr);
     }
@@ -60,14 +55,14 @@ const Trigger = styled.div`
     align-content: center;
     justify-self: end;
     padding: 0 1rem;
-    @media (min-width: ${getThemeBreakpoints('desktop')}px) {
+    @media (min-width: ${getThemeWidth('windowWidth')}px) {
         display: none;
     }
 `
 
 const StyledImage = styled.img`
     justify-self: start;
-    @media (min-width: ${getThemeBreakpoints('desktop')}px) {
+    @media (min-width: ${getThemeWidth('windowWidth')}px) {
         justify-self: center;
     }
 `
@@ -101,7 +96,7 @@ const Header: React.FC<NavBarProps> = (props) => {
 
     const [hamburgerOpen, setHamburgerOpen] = useState(false)
     const theme = useTheme()
-    const desktopBreakpoint = theme.breakpoints.desktop
+    const desktopBreakpoint = theme.windowWidth
 
     const toggleHamburger = useCallback(
         () => setHamburgerOpen((prev) => !prev),
