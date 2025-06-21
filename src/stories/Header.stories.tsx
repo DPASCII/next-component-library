@@ -12,15 +12,15 @@ export const Primary: Story = {
     args: {
         height: 60,
         pages: [
-            { item: 'MenuItem1', link: '/' },
+            { name: 'MenuItem1', link: '/' },
             {
-                item: 'MenuItem2',
+                name: 'MenuItem2',
                 link: '/link2',
-                subPages: [{ subItem: 'subMenuItem1', subLink: '/subLink1' }],
+                subPages: [{ subName: 'subMenuItem1', subLink: '/subLink1' }],
             },
-            { item: 'MenuItem3', link: '/' },
-            { item: 'MenuItem4', link: '/' },
-            { item: 'MenuItem5', link: '/' },
+            { name: 'MenuItem3', link: '/' },
+            { name: 'MenuItem4', link: '/' },
+            { name: 'MenuItem5', link: '/' },
         ],
     },
 }

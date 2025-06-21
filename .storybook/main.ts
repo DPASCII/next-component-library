@@ -10,9 +10,6 @@ const config: StorybookConfig = {
         '@storybook/addon-vitest',
         '@storybook/addon-themes',
     ],
-    framework: {
-        name: '@storybook/react-vite',
-        options: {},
-    },
+    framework: '@storybook/nextjs-vite',
 }
 export default config
