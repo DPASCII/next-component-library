@@ -12,7 +12,7 @@ export const Primary: Story = {
     args: {
         height: 500,
         width: 500,
-        imgSrc: 'https://www.shutterstock.com/image-vector/no-photo-thumbnail-graphic-element-600nw-2311073121.jpg',
+        imgSrc: '',
         text: 'primary',
     },
 }
