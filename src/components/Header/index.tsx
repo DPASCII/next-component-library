@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import React, { useCallback, useEffect, useState } from 'react'
 import styled, { useTheme } from 'styled-components'
 import Hamburger from './components/hamburger'
