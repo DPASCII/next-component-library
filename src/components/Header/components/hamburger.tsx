@@ -32,10 +32,10 @@ const Burger = styled.div<{
     transform: ${({ $isOpen, $index }) =>
         $isOpen &&
         ($index === 1
-            ? 'rotate(45deg) translateX(5%);'
+            ? 'rotate(45deg) translateX(5%)'
             : $index === 2
             ? 'translateX(0%)'
-            : 'rotate(-45deg) translateX(5%);')};
+            : 'rotate(-45deg) translateX(5%)')};
 `
 
 export const Hamburger = ({ isOpen }: { isOpen?: boolean }) => (
