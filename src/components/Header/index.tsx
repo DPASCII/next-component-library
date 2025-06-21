@@ -84,9 +84,9 @@ export interface NavBarProps
     menuWidth?: number
     pages: {
         iconComponent?: React.ReactNode
-        item: string
+        name: string
         link: string
-        subPages?: { subItem: string; subLink: string }[]
+        subPages?: { subName: string; subLink: string }[]
     }[]
 }
 

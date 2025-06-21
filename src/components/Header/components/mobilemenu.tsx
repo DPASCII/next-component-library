@@ -60,9 +60,9 @@ export interface MobileMenuProps {
     height?: number
     pages: {
         iconComponent?: React.ReactNode
-        item: string
+        name: string
         link: string
-        subPages?: { subItem: string; subLink: string }[]
+        subPages?: { subName: string; subLink: string }[]
     }[]
 }
 
@@ -70,17 +70,17 @@ const MobileMenu: React.FC<MobileMenuProps> = (props) => {
     const { pages, height = 60, isOpen } = props
     return (
         <MobileMenuWrapper $toggle={isOpen} $height={height}>
-            {pages.map(({ iconComponent, item, link, subPages }) => (
+            {pages.map(({ iconComponent, name, link, subPages }) => (
                 <div key={link} style={{ display: 'grid' }}>
-                    <MenuItem key={item} href={link}>
+                    <MenuItem key={name} href={link}>
                         {iconComponent}
-                        {item}
+                        {name}
                     </MenuItem>
                     {subPages &&
                         subPages.map((subPage) => (
-                            <SubMenuWrapper key={subPage.subItem}>
+                            <SubMenuWrapper key={subPage.subName}>
                                 <SubMenuItem href={subPage.subLink}>
-                                    {subPage.subItem}
+                                    {subPage.subName}
                                 </SubMenuItem>
                             </SubMenuWrapper>
                         ))}
