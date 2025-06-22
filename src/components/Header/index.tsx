@@ -20,6 +20,8 @@ const getThemeWidth =
 const NavBarContainer = styled.div<{
     $height: number
 }>`
+    position: sticky;
+    top: 0;
     background-color: ${getThemeColors('primary')};
     height: ${({ $height }) => $height}px;
     display: grid;
@@ -27,17 +29,17 @@ const NavBarContainer = styled.div<{
 
 const NavBarWrapper = styled.div`
     justify-self: center;
-    justify-items: end;
-    display: grid;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     height: 100%;
     width: 100%;
     max-width: ${getThemeWidth('windowWidth')}px;
 `
 
-const LogoWrapper = styled.div`
-    position: relative;
-    height: 100%;
-    width: auto;
+const StyledImage = styled.img<{ $height: number }>`
+    height: ${({ $height }) => $height}px;
+    object-fit: contain;
 `
 
 const MenuWrapper = styled.div<{ $number: number }>`
@@ -50,20 +52,14 @@ const MenuWrapper = styled.div<{ $number: number }>`
 
 const Trigger = styled.div`
     display: grid;
+    margin-left: auto;
     height: 100%;
     width: fit-content;
     align-content: center;
-    justify-self: end;
+    align-self: right;
     padding: 0 1rem;
     @media (min-width: ${getThemeWidth('windowWidth')}px) {
         display: none;
-    }
-`
-
-const StyledImage = styled.img`
-    justify-self: start;
-    @media (min-width: ${getThemeWidth('windowWidth')}px) {
-        justify-self: center;
     }
 `
 
@@ -119,16 +115,7 @@ const Header: React.FC<NavBarProps> = (props) => {
     return (
         <NavBarContainer $height={height} {...rest}>
             <NavBarWrapper>
-                {logo && (
-                    <LogoWrapper>
-                        <StyledImage
-                            src={logo}
-                            alt={alt}
-                            layout="fill"
-                            style={{ objectFit: 'contain' }}
-                        />
-                    </LogoWrapper>
-                )}
+                {logo && <StyledImage $height={height} src={logo} alt={alt} />}
                 <Trigger onClick={toggleHamburger}>
                     <Hamburger isOpen={hamburgerOpen} />
                 </Trigger>

@@ -8,21 +8,19 @@ const getThemeColors =
     ({ theme }: any) =>
         theme.colors[prop]
 
-const getProps = (prop: string) => (props: any) => props[prop]
-
 const MobileMenuWrapper = styled.div<{ $height: number; $toggle: boolean }>`
     visibility: ${({ $toggle }) => ($toggle ? 'visible' : 'hidden')};
+    position: fixed;
+    top: ${(props) => props.$height}px;
+    right: 0;
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: ${getProps('height')}px;
-    height: calc(100vh - ${getProps('height')}px);
-    right: 0;
+    height: 100vh;
     background-color: ${getThemeColors('primary')};
     width: 100%;
     max-width: 300px;
     overflow-y: auto;
-    z-index: 1000;
+    z-index: 10;
 `
 
 const MenuItem = styled.a`
