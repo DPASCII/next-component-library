@@ -20,9 +20,8 @@ const FooterWrapper = styled.div`
     justify-content: center;
 `
 
-const ContentWrapper = styled.div<{ $index: string; $number: number }>`
+const ContentWrapper = styled.div`
     display: grid;
-    grid-template-rows: repeat(auto-fit, ${({ $number }) => $number});
     grid-gap: 16px;
     justify-items: center;
     max-width: ${getThemeWidth('windowWidth')};
@@ -32,9 +31,10 @@ const ContentWrapper = styled.div<{ $index: string; $number: number }>`
 `
 
 const Footer = ({
-    contents,
+    children,
     logo,
 }: {
+    children: React.ReactNode
     contents: {
         title: string
         subtitle: string
@@ -44,7 +44,8 @@ const Footer = ({
 }) => {
     return (
         <FooterWrapper>
-            <ContentWrapper $index="top" $number={contents.length}>
+            <ContentWrapper>
+                {children}
                 <LogoSocials
                     logo={logo}
                     socialsurl={['www.facebook.com', 'www.x.com']}
@@ -86,9 +87,7 @@ const Footer = ({
                     ]}
                 />
             </ContentWrapper>
-            <ContentWrapper $index="bottom" $number={1}>
-                ay malaki
-            </ContentWrapper>
+            <ContentWrapper></ContentWrapper>
         </FooterWrapper>
     )
 }
