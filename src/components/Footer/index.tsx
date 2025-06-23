@@ -1,8 +1,7 @@
 'use client'
 import styled from 'styled-components'
-import ContentList from './components/ContentList'
-import LogoSocials from './components/LogoSocials'
 import BottomContent from './components/BottomContent'
+import ContentList from './components/ContentList'
 
 const getThemeColors =
     (prop: string) =>
@@ -16,7 +15,7 @@ const getThemeWidth =
 
 const FooterWrapper = styled.div`
     display: grid;
-    grid-template-rows: repeat(auto-fit, 2);
+    grid-template-rows: repeat(2, auto);
     background-color: ${getThemeColors('secondary')};
     justify-content: center;
 `
@@ -32,66 +31,41 @@ const ContentWrapper = styled.div`
 `
 
 const Footer = ({
+    SocialsComponent,
     children,
-    logo,
+    contents,
+    smallLogo,
+    companyName,
 }: {
+    SocialsComponent?: React.ReactNode
     children: React.ReactNode
     contents: {
         title: string
         subtitle: string
         itemlist: { item: string; subitem: string }[]
     }[]
-    logo: string
+    smallLogo: string
+    companyName: string
 }) => {
     return (
         <FooterWrapper>
             <ContentWrapper>
+                {SocialsComponent}
+                {contents &&
+                    contents.map((contents, index) => (
+                        <ContentList
+                            key={index}
+                            title={contents.title}
+                            subtitle={contents.subtitle}
+                            itemlist={contents.itemlist}
+                        />
+                    ))}
                 {children}
-                <LogoSocials
-                    logo={logo}
-                    socialsurl={['www.facebook.com', 'www.x.com']}
-                />
-                <ContentList
-                    title="This is the title"
-                    subtitle="this is the subtitle"
-                    itemlist={[
-                        {
-                            item: 'ths is one item',
-                            subitem: 'this is subitem',
-                        },
-                        {
-                            item: 'ths is one item',
-                            subitem: 'this is subitem',
-                        },
-                        {
-                            item: 'ths is one item',
-                            subitem: 'this is subitem',
-                        },
-                    ]}
-                />
-                <ContentList
-                    title="This is the title"
-                    subtitle="this is the subtitle"
-                    itemlist={[
-                        {
-                            item: 'ths is one item',
-                            subitem: 'this is subitem',
-                        },
-                        {
-                            item: 'ths is one item',
-                            subitem: 'this is subitem',
-                        },
-                        {
-                            item: 'ths is one item',
-                            subitem: 'this is subitem',
-                        },
-                    ]}
-                />
             </ContentWrapper>
             <ContentWrapper>
                 <BottomContent
-                    altLogo="https://shop.raceya.fit/wp-content/uploads/2020/11/logo-placeholder.jpg"
-                    companyName="Company Name"
+                    smallLogo={smallLogo}
+                    companyName={companyName}
                 />
             </ContentWrapper>
         </FooterWrapper>

@@ -30,10 +30,10 @@ const StyledLink = styled.a`
     text-decoration: none;
 `
 const BottomContent = ({
-    altLogo,
+    smallLogo,
     companyName,
 }: {
-    altLogo?: string
+    smallLogo?: string
     companyName: string
 }) => {
     const year = new Date().getFullYear()
@@ -43,7 +43,7 @@ const BottomContent = ({
                 <StyledLink href="/privacy">Privacy</StyledLink>
                 <StyledLink href="/terms">Terms and Conditions</StyledLink>
             </LegalWrapper>
-            {altLogo && <StyledImg src={altLogo} alt="logo" />}
+            {smallLogo && <StyledImg src={smallLogo} alt="logo" />}
             <CopyrightWrapper>
                 {year}© {companyName}. All Rights Reserved.
             </CopyrightWrapper>
