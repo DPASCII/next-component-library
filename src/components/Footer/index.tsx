@@ -2,6 +2,7 @@
 import styled from 'styled-components'
 import ContentList from './components/ContentList'
 import LogoSocials from './components/LogoSocials'
+import BottomContent from './components/BottomContent'
 
 const getThemeColors =
     (prop: string) =>
@@ -87,7 +88,12 @@ const Footer = ({
                     ]}
                 />
             </ContentWrapper>
-            <ContentWrapper></ContentWrapper>
+            <ContentWrapper>
+                <BottomContent
+                    altLogo="https://shop.raceya.fit/wp-content/uploads/2020/11/logo-placeholder.jpg"
+                    companyName="Company Name"
+                />
+            </ContentWrapper>
         </FooterWrapper>
     )
 }

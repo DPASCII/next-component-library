@@ -20,14 +20,14 @@ const StyledImg = styled.img`
 
 const LogoSocials = ({
     socialsurl,
-    logo = 'https://shop.raceya.fit/wp-content/uploads/2020/11/logo-placeholder.jpg',
+    logo,
 }: {
     socialsurl: string[]
-    logo: string
+    logo?: string
 }) => {
     return (
         <Wrapper>
-            <StyledImg src={logo} />
+            {logo && <StyledImg src={logo} alt="logo" />}
             <SocialsWrapper $number={socialsurl.length}>
                 {socialsurl.map((url, index) => (
                     <SocialIcon url={url} key={index} />
