@@ -33,6 +33,7 @@ const LegalWrapper = styled.div`
 `
 
 const StyledLink = styled.a`
+    color: inherit;
     text-decoration: none;
     display: inline-block;
     position: relative;
