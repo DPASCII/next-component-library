@@ -9,17 +9,17 @@ const getThemeBreakpoints =
 const BottomContentWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr;
-    justify-items: center;
+
     align-items: center;
     text-align: center;
     min-width: calc(${({ theme }) => theme.windowWidth}px * 2 / 3);
-    justify-content: space-between;
     @media (min-width: ${getThemeBreakpoints('desktop')}px) {
         grid-template-columns: 1fr 0.5fr 1fr;
     }
 `
 
 const StyledImg = styled.img`
+    justify-self: center;
     height: 4rem;
     margin: 0.5rem;
 `
