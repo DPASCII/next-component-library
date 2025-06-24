@@ -11,6 +11,7 @@ const Wrapper = styled.div`
 const SocialsWrapper = styled.div<{ $number: number }>`
     display: grid;
     grid-template-columns: repeat(${({ $number }) => $number}, max-content);
+    grid-gap: 8px;
 `
 
 const StyledImg = styled.img`

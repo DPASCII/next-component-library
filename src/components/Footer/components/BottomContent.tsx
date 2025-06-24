@@ -7,14 +7,15 @@ const getThemeBreakpoints =
         theme.breakpoints[prop]
 
 const BottomContentWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
     align-items: center;
     text-align: center;
-    min-width: ${({ theme }) => theme.windowWidth}px;
+    min-width: calc(${({ theme }) => theme.windowWidth}px * 2 / 3);
     justify-content: space-between;
     @media (min-width: ${getThemeBreakpoints('desktop')}px) {
-        flex-direction: row;
+        grid-template-columns: 1fr 0.5fr 1fr;
     }
 `
 
@@ -55,7 +56,7 @@ const StyledLink = styled.a`
     }
 `
 const BottomContent = ({
-    smallLogo,
+    smallLogo = 'https://shop.raceya.fit/wp-content/uploads/2020/11/logo-placeholder.jpg',
     companyName,
 }: {
     smallLogo?: string
