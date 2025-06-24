@@ -56,7 +56,7 @@ const StyledLink = styled.a`
     }
 `
 const BottomContent = ({
-    smallLogo = 'https://shop.raceya.fit/wp-content/uploads/2020/11/logo-placeholder.jpg',
+    smallLogo,
     companyName,
 }: {
     smallLogo?: string
