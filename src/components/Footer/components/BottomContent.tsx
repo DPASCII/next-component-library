@@ -9,11 +9,11 @@ const getThemeBreakpoints =
 const BottomContentWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr;
-
+    grid-template-rows: auto;
     align-items: center;
     text-align: center;
-    min-width: calc(${({ theme }) => theme.windowWidth}px * 2 / 3);
     @media (min-width: ${getThemeBreakpoints('desktop')}px) {
+        max-width: calc(${({ theme }) => theme.windowWidth}px * 2 / 3);
         grid-template-columns: 1fr 0.5fr 1fr;
     }
 `
