@@ -30,13 +30,13 @@ const Subitem = styled.p`
 `
 
 const List = ({
-    title,
-    subtitle,
-    itemlist,
+    contents: { title, subtitle, itemlist },
 }: {
-    title?: string
-    subtitle?: string
-    itemlist: { item: string; subitem?: string }[]
+    contents: {
+        title?: string
+        subtitle?: string
+        itemlist: { item: string; subitem?: string }[]
+    }
 }) => {
     return (
         <Wrapper>

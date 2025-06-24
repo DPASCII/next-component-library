@@ -18,7 +18,7 @@ const StyledImg = styled.img`
     margin: 0.5rem;
 `
 
-const LogoSocials = ({
+const SocialsComponent = ({
     socialsurl,
     logo,
 }: {
@@ -37,4 +37,4 @@ const LogoSocials = ({
     )
 }
 
-export default LogoSocials
+export default SocialsComponent

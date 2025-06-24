@@ -2,6 +2,7 @@
 import styled from 'styled-components'
 import BottomContent from './components/BottomContent'
 import ContentList from './components/ContentList'
+import SocialsComponent from './components/SocialsComponent'
 
 const getThemeColors =
     (prop: string) =>
@@ -30,14 +31,35 @@ const ContentWrapper = styled.div`
     padding: 1rem;
 `
 
-const Footer = ({
-    SocialsComponent,
+export const FooterLayout = ({
+    children,
+    bottomContent,
+}: {
+    children: React.ReactNode
+    bottomContent: React.ReactNode
+}) => {
+    return (
+        <FooterWrapper>
+            <ContentWrapper>{children}</ContentWrapper>
+            <ContentWrapper>{bottomContent}</ContentWrapper>
+        </FooterWrapper>
+    )
+}
+
+export const Footer = ({
+    socialsComponent = (
+        <SocialsComponent
+            socialsurl={['www.facebook.com', 'www.x.com', 'www.instagram.com']}
+        />
+    ),
     children,
     contents,
     smallLogo,
-    companyName,
+    companyName = 'made by David Pascual',
 }: {
-    SocialsComponent?: React.ReactNode
+    logo: string
+    socialsurl: string[]
+    socialsComponent?: React.ReactNode
     children: React.ReactNode
     contents: {
         title: string
@@ -48,27 +70,21 @@ const Footer = ({
     companyName: string
 }) => {
     return (
-        <FooterWrapper>
-            <ContentWrapper>
-                {SocialsComponent}
-                {contents &&
-                    contents.map((contents, index) => (
-                        <ContentList
-                            key={index}
-                            title={contents.title}
-                            subtitle={contents.subtitle}
-                            itemlist={contents.itemlist}
-                        />
-                    ))}
-                {children}
-            </ContentWrapper>
-            <ContentWrapper>
+        <FooterLayout
+            bottomContent={
                 <BottomContent
                     smallLogo={smallLogo}
                     companyName={companyName}
                 />
-            </ContentWrapper>
-        </FooterWrapper>
+            }
+        >
+            {socialsComponent}
+            {contents &&
+                contents.map((contents, index) => (
+                    <ContentList key={index} contents={contents} />
+                ))}
+            {children}
+        </FooterLayout>
     )
 }
 
