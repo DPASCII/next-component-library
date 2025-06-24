@@ -5,7 +5,6 @@ const Wrapper = styled.div`
     display: grid;
     justify-content: center;
     width: fit-content;
-    text-align: center;
     h1 {
         margin: 0;
     }

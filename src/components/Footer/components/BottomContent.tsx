@@ -1,11 +1,6 @@
 'use client'
 import styled from 'styled-components'
 
-const getThemeColors =
-    (props: string) =>
-    ({ theme }: any) =>
-        theme.colors[props]
-
 const BottomContentWrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -23,7 +18,6 @@ const CopyrightWrapper = styled.div``
 const LegalWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    text-decoration: none;
 `
 
 const StyledLink = styled.a`
