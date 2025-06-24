@@ -13,6 +13,7 @@ export const theme: DefaultTheme = {
         secondaryText: 'white',
     },
     windowWidth: 1320,
+    breakpoints: { desktop: 1320, tablet: 768, mobile: 375 },
 }
 
 export default theme
