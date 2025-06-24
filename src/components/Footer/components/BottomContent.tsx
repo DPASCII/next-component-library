@@ -13,7 +13,6 @@ const BottomContentWrapper = styled.div`
     align-items: center;
     text-align: center;
     @media (min-width: ${getThemeBreakpoints('desktop')}px) {
-        max-width: calc(${({ theme }) => theme.windowWidth}px * 2 / 3);
         grid-template-columns: 1fr 0.5fr 1fr;
     }
 `
@@ -70,7 +69,7 @@ const BottomContent = ({
                 <StyledLink href="/terms">Terms and Conditions</StyledLink>
             </LegalWrapper>
             {smallLogo && <StyledImg src={smallLogo} alt="logo" />}
-            <div>
+            <div style={{ gridColumn: '3' }}>
                 {year}© {companyName}. All Rights Reserved.
             </div>
         </BottomContentWrapper>
