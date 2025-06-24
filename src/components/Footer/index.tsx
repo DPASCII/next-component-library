@@ -14,6 +14,11 @@ const getThemeWidth =
     ({ theme }: any) =>
         theme[prop]
 
+const getThemeBreakpoints =
+    (prop: string) =>
+    ({ theme }: any) =>
+        theme.breakpoints[prop]
+
 const FooterWrapper = styled.div`
     display: grid;
     grid-template-rows: repeat(2, auto);
@@ -25,10 +30,14 @@ const ContentWrapper = styled.div`
     display: grid;
     grid-gap: 16px;
     justify-items: center;
-    max-width: ${getThemeWidth('windowWidth')};
+    max-width: ${getThemeWidth('windowWidth')}px;
     background-color: ${getThemeColors('secondary')};
     color: ${getThemeColors('secondaryText')};
     padding: 1rem;
+    grid-template-columns: 1fr;
+    @media (min-width: ${getThemeBreakpoints('desktop')}px) {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
 `
 
 export const FooterLayout = ({

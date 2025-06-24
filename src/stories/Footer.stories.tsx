@@ -16,6 +16,16 @@ export const Primary: Story = {
                 subtitle: 'this is subtitle',
                 itemlist: [{ item: 'item', subitem: 'subitem' }],
             },
+            {
+                title: 'this is title',
+                subtitle: 'this is subtitle',
+                itemlist: [{ item: 'item', subitem: 'subitem' }],
+            },
+            {
+                title: 'this is title',
+                subtitle: 'this is subtitle',
+                itemlist: [{ item: 'item', subitem: 'subitem' }],
+            },
         ],
     },
 }
