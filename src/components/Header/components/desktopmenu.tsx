@@ -7,7 +7,7 @@ const getThemeColors =
         theme.colors[prop]
 
 const MenuWrapper = styled.div`
-    background-color: ${getThemeColors('primary')};
+    background-color: rgb(${getThemeColors('primary')});
     height: 80%;
     align-self: end;
     position: relative;
@@ -17,28 +17,28 @@ const MenuWrapper = styled.div`
 const MenuItem = styled.a<{ $menuWidth: number }>`
     cursor: pointer;
     width: ${({ $menuWidth }) => $menuWidth}px;
-    color: ${getThemeColors('text')};
+    color: rgb(${getThemeColors('text')});
     text-align: center;
     align-content: center;
     justify-content: center;
     padding: 8px;
     transition: linear 0.3s;
     &:hover {
-        background-color: ${getThemeColors('hoverBackground')};
+        background-color: rgb(${getThemeColors('hoverBackground')});
     }
 `
 const SubMenuItem = styled.a`
-    color: ${getThemeColors('text')};
+    color: rgb(${getThemeColors('text')});
     padding: 16px;
     white-space: nowrap;
     transition: linear 0.3s;
     &:hover {
-        background-color: ${getThemeColors('hoverBackground')};
+        background-color: rgb(${getThemeColors('hoverBackground')});
     }
 `
 
 const SubMenuWrapper = styled.div`
-    background-color: ${getThemeColors('primary')};
+    background-color: rgb(${getThemeColors('primary')});
     position: absolute;
     top: 100%;
     left: 0;

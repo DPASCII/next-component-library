@@ -43,7 +43,7 @@ const StyledLink = styled.a`
 
 const TextWrapper = styled.div`
     grid-row: 2;
-    color: ${getThemeColors('text')};
+    color: rgb(${getThemeColors('text')});
     padding: 8px 0;
     h1 {
         margin: 0;

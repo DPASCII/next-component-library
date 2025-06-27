@@ -15,7 +15,7 @@ const JumbotronWrapper = styled.div`
 const TitleWrapper = styled.div`
     justify-self: center;
     align-self: center;
-    background-color: ${getThemeColors('secondary')};
+    background-color: rgba(${getThemeColors('secondary')}, 0.7);
     border-radius: 32px;
     height: 80%;
     width: 80%;
