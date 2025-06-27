@@ -16,6 +16,10 @@ const CardWrapper = styled.div<{
     width: ${({ $width }) => $width}px;
     overflow: hidden;
     border: 1px solid black;
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+        width: 100%;
+        height: auto;
+    }
 `
 
 const ImgWrapper = styled.div`
@@ -42,6 +46,7 @@ const TextWrapper = styled.div`
     color: rgb(${getThemeColors('text')});
     padding: 8px 0;
     h1 {
+        font-size: 2.5rem;
         margin: 0;
     }
     h2 {
@@ -76,7 +81,12 @@ const Card = ({
             </ImgWrapper>
             <TextWrapper>
                 <h1>
-                    <a href={link}>{text}</a>
+                    <a
+                        href={link}
+                        style={link ? { cursor: 'pointer' } : undefined}
+                    >
+                        {text}
+                    </a>
                 </h1>
                 {subText && <h2>{subText}</h2>}
             </TextWrapper>
