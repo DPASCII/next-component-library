@@ -22,7 +22,7 @@ const getThemeBreakpoints =
 const FooterWrapper = styled.div`
     display: grid;
     grid-template-rows: repeat(2, auto);
-    background-color: ${getThemeColors('secondary')};
+    background-color: rgb(${getThemeColors('secondary')});
     justify-content: center;
 `
 
@@ -31,8 +31,8 @@ const ContentWrapper = styled.div`
     grid-gap: 16px;
     justify-items: center;
     max-width: ${getThemeWidth('windowWidth')}px;
-    background-color: ${getThemeColors('secondary')};
-    color: ${getThemeColors('secondaryText')};
+    background-color: rgb(${getThemeColors('secondary')});
+    color: rgb(${getThemeColors('secondaryText')});
     padding: 1rem;
     grid-template-columns: 1fr;
     @media (min-width: ${getThemeBreakpoints('desktop')}px) {

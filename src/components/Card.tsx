@@ -37,13 +37,9 @@ const StyledImg = styled.img<{ $height: number }>`
     border: 1px solid black;
 `
 
-const StyledLink = styled.a`
-    text-decoration: none;
-`
-
 const TextWrapper = styled.div`
     grid-row: 2;
-    color: ${getThemeColors('text')};
+    color: rgb(${getThemeColors('text')});
     padding: 8px 0;
     h1 {
         margin: 0;
@@ -74,13 +70,13 @@ const Card = ({
     return (
         <CardWrapper $height={height} $width={width}>
             <ImgWrapper>
-                <StyledLink href={link}>
+                <a href={link}>
                     <StyledImg $height={height} src={imgSrc} alt={alt} />
-                </StyledLink>
+                </a>
             </ImgWrapper>
             <TextWrapper>
                 <h1>
-                    <StyledLink href={link}>{text}</StyledLink>
+                    <a href={link}>{text}</a>
                 </h1>
                 {subText && <h2>{subText}</h2>}
             </TextWrapper>

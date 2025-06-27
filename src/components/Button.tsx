@@ -7,16 +7,16 @@ const getThemeColors =
         theme.colors[prop]
 
 const StyledButton = styled.button`
-    background-color: ${getThemeColors('button')};
-    color: ${getThemeColors('buttonText')};
+    background-color: rgb(${getThemeColors('button')});
+    color: rgb(${getThemeColors('buttonText')});
     padding: 8px;
-    border: 2px solid ${getThemeColors('button')};
+    border: 2px solid rgb(${getThemeColors('button')});
     border-radius: 24px;
     cursor: pointer;
     &:hover {
-        background-color: ${getThemeColors('buttonHover')};
-        color: ${getThemeColors('buttonHoverText')};
-        border: 2px solid ${getThemeColors('button')};
+        background-color: rgb(${getThemeColors('buttonHover')});
+        color: rgb(${getThemeColors('buttonHoverText')});
+        border: 2px solid rgb(${getThemeColors('button')});
     }
 `
 

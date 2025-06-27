@@ -16,7 +16,7 @@ const MobileMenuWrapper = styled.div<{ $height: number; $toggle: boolean }>`
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: ${getThemeColors('primary')};
+    background-color: rgb(${getThemeColors('primary')});
     width: 100%;
     max-width: 300px;
     overflow-y: auto;
@@ -26,30 +26,28 @@ const MobileMenuWrapper = styled.div<{ $height: number; $toggle: boolean }>`
 const MenuItem = styled.a`
     margin-left: 0.5rem;
     padding: 1rem;
-    text-decoration: none;
-    color: ${getThemeColors('text')};
+    color: rgb(${getThemeColors('text')});
     font-weight: bold;
     transition: background-color 0.3s linear;
     &:hover {
-        background-color: ${getThemeColors('hoverBackground')};
+        background-color: rgb(${getThemeColors('hoverBackground')});
     }
 `
 
 const SubMenuWrapper = styled.div`
     margin-left: 1rem;
-    background-color: ${getThemeColors('primary')};
+    background-color: rgb(${getThemeColors('primary')});
     position: relative;
     display: flex;
     flex-direction: column;
 `
 const SubMenuItem = styled.a`
     padding: 0.5rem 1rem;
-    text-decoration: none;
-    color: ${getThemeColors('text')};
+    color: rgb(${getThemeColors('text')});
     font-weight: normal;
     transition: background-color 0.3s linear;
     &:hover {
-        background-color: ${getThemeColors('hoverBackground')};
+        background-color: rgb(${getThemeColors('hoverBackground')});
     }
 `
 

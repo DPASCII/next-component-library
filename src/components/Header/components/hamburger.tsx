@@ -25,7 +25,7 @@ const Burger = styled.div<{
         $isOpen && $index === 2 ? '0' : '2.5rem'};
     height: 0.4em;
     border-radius: 10px;
-    background: ${getThemeColors('secondary')};
+    background: rgb(${getThemeColors('secondary')});
     transform-origin: 1px;
     transition: all 0.3s linear;
     margin: auto;
