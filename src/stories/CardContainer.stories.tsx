@@ -18,29 +18,29 @@ export const Primary: Story = {
     render: (args) => (
         <CardContainer {...args}>
             <Card
-                height={200}
-                width={300}
+                height={500}
+                width={500}
                 text="Card 1"
                 imgSrc="https://www.shutterstock.com/image-vector/no-photo-thumbnail-graphic-element-600nw-2311073121.jpg"
                 alt="Card 1"
             />
             <Card
-                height={200}
-                width={300}
+                height={500}
+                width={500}
                 text="Card 2"
                 imgSrc="https://www.shutterstock.com/image-vector/no-photo-thumbnail-graphic-element-600nw-2311073121.jpg"
                 alt="Card 2"
             />
             <Card
-                height={200}
-                width={300}
+                height={500}
+                width={500}
                 text="Card 3"
                 imgSrc="https://www.shutterstock.com/image-vector/no-photo-thumbnail-graphic-element-600nw-2311073121.jpg"
                 alt="Card 3"
             />
             <Card
-                height={200}
-                width={300}
+                height={500}
+                width={500}
                 text="Card 4"
                 imgSrc="https://www.shutterstock.com/image-vector/no-photo-thumbnail-graphic-element-600nw-2311073121.jpg"
                 alt="Card 4"
