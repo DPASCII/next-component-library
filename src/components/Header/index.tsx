@@ -22,7 +22,7 @@ const NavBarContainer = styled.div<{
 }>`
     position: sticky;
     top: 0;
-    background-color: ${getThemeColors('primary')};
+    background-color: rgb(${getThemeColors('primary')});
     height: ${({ $height }) => $height}px;
     display: grid;
 `
