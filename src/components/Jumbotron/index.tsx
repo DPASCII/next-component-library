@@ -11,9 +11,8 @@ const getThemeColors =
 
 const JumbotronWrapper = styled.div`
     position: relative;
-    display: grid;
-    place-items: center;
     height: 80vh;
+    width: 100%;
     background-color: rgb(${getThemeColors('primary')});
     overflow: hidden;
 `
@@ -34,8 +33,16 @@ const BackgroundImage = styled.div<{ $image: string; $visible: boolean }>`
 `
 
 const ContentWrapper = styled.div`
-    z-index: 1;
+    position: relative;
+    height: 80%;
+    width: ${({ theme }) => theme.windowWidth};
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    z-index: 1;
 `
 
 const Jumbotron = ({
@@ -51,7 +58,6 @@ const Jumbotron = ({
 }) => {
     const [index, setIndex] = useState(0)
 
-    // Preload all images once
     useEffect(() => {
         images.forEach((src) => {
             const img = new Image()
@@ -59,7 +65,6 @@ const Jumbotron = ({
         })
     }, [images])
 
-    // Image switch timer
     useEffect(() => {
         const interval = setInterval(() => {
             setIndex((prev) => (prev + 1) % images.length)
