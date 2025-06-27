@@ -10,9 +10,7 @@ type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
     args: {
-        height: 500,
-        width: 500,
-        imgSrc: '',
-        text: 'primary',
+        title: 'This is the Title',
+        subtitle: 'This is the Subtitle',
     },
 }
