@@ -26,7 +26,6 @@ const MobileMenuWrapper = styled.div<{ $height: number; $toggle: boolean }>`
 const MenuItem = styled.a`
     margin-left: 0.5rem;
     padding: 1rem;
-    text-decoration: none;
     color: rgb(${getThemeColors('text')});
     font-weight: bold;
     transition: background-color 0.3s linear;
@@ -44,7 +43,6 @@ const SubMenuWrapper = styled.div`
 `
 const SubMenuItem = styled.a`
     padding: 0.5rem 1rem;
-    text-decoration: none;
     color: rgb(${getThemeColors('text')});
     font-weight: normal;
     transition: background-color 0.3s linear;

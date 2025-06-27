@@ -14,6 +14,7 @@ const BottomContentWrapper = styled.div`
     text-align: center;
     @media (min-width: ${getThemeBreakpoints('desktop')}px) {
         grid-template-columns: 1fr 0.5fr 1fr;
+        row-gap: 0;
     }
 `
 
@@ -26,6 +27,7 @@ const StyledImg = styled.img`
 const LegalWrapper = styled.div`
     display: flex;
     flex-direction: column;
+    align-items: center;
     @media (min-width: ${getThemeBreakpoints('desktop')}px) {
         gap: 16px;
         flex-direction: row;
@@ -33,10 +35,11 @@ const LegalWrapper = styled.div`
 `
 
 const StyledLink = styled.a`
-    color: inherit;
-    text-decoration: none;
     display: inline-block;
+    width: fit-content;
     position: relative;
+    padding-bottom: 2px;
+    color: rgb(${({ theme }) => theme.colors.secondaryText});
     &::after {
         content: '';
         position: absolute;
@@ -45,13 +48,18 @@ const StyledLink = styled.a`
         height: 2px;
         bottom: 0;
         left: 0;
-        background-color: ${({ theme }) => theme.colors.secondaryText};
+        background-color: rgb(${({ theme }) => theme.colors.secondaryText});
         transform-origin: left;
         transition: transform 0.25s ease-in-out;
     }
     &:hover::after {
         transform: scaleX(1);
-        transform-origin: left;
+    }
+`
+
+const YearText = styled.div`
+    @media (min-width: ${getThemeBreakpoints('desktop')}px) {
+        grid-column: 3;
     }
 `
 const BottomContent = ({
@@ -69,9 +77,9 @@ const BottomContent = ({
                 <StyledLink href="/terms">Terms and Conditions</StyledLink>
             </LegalWrapper>
             {smallLogo && <StyledImg src={smallLogo} alt="logo" />}
-            <div style={{ gridColumn: '3' }}>
+            <YearText>
                 {year}© {companyName}. All Rights Reserved.
-            </div>
+            </YearText>
         </BottomContentWrapper>
     )
 }
