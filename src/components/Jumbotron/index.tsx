@@ -1,6 +1,5 @@
 'use client'
 import styled from 'styled-components'
-import Button from '../Button'
 import TitleBlock from './components/titleblock'
 import { useEffect, useState } from 'react'
 
@@ -81,8 +80,6 @@ const Jumbotron = ({
 
             <ContentWrapper>
                 <TitleBlock title={title} subtitle={subtitle}>
-                    <Button label="This is Button" />
-                    <Button label="This is Button" />
                     {children}
                 </TitleBlock>
             </ContentWrapper>
