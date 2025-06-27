@@ -16,6 +16,10 @@ const CardWrapper = styled.div<{
     width: ${({ $width }) => $width}px;
     overflow: hidden;
     border: 1px solid black;
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+        width: 100%;
+        height: auto;
+    }
 `
 
 const ImgWrapper = styled.div`
