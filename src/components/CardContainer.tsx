@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const CardContainerWrapper = styled.div<{ $columns: number }>`
     display: grid;
     grid-template-columns: repeat(${({ $columns }) => $columns}, max-content);
-    background-color: ${({ theme }) => theme.colors.primary};
+    background-color: rgb(${({ theme }) => theme.colors.primary});
     border: 1px solid black;
     grid-gap: 32px;
     max-width: 1320px;
