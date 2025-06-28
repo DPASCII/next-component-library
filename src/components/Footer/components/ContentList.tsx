@@ -5,27 +5,16 @@ const Wrapper = styled.div`
     display: grid;
     justify-content: center;
     width: fit-content;
-    h1 {
-        margin: 0;
-    }
-    h2 {
-        margin: 0;
-    }
 `
 
 const ListWrapper = styled.ul`
     display: grid;
-    grid-gap: 8px;
-    margin: 0;
-    padding: 0;
+    grid-gap: 0.5rem;
 `
 
 const Item = styled.li`
     font-weight: 600;
     list-style-type: none;
-`
-const Subitem = styled.p`
-    margin: 0;
 `
 
 const List = ({
@@ -44,7 +33,7 @@ const List = ({
             {itemlist.map((listitem, index) => (
                 <ListWrapper key={index}>
                     <Item>{listitem.item}</Item>
-                    {listitem.subitem && <Subitem>{listitem.subitem}</Subitem>}
+                    {listitem.subitem && <p>{listitem.subitem}</p>}
                 </ListWrapper>
             ))}
         </Wrapper>

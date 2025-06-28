@@ -15,7 +15,6 @@ const CardWrapper = styled.div<{
     height: ${({ $height }) => $height}px;
     width: ${({ $width }) => $width}px;
     overflow: hidden;
-    border: 1px solid black;
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
         width: 100%;
         height: auto;
@@ -38,7 +37,6 @@ const StyledImg = styled.img<{ $height: number }>`
         opacity: 70%;
         transform: scale(98%);
     }
-    border: 1px solid black;
 `
 
 const TextWrapper = styled.div`
@@ -47,10 +45,8 @@ const TextWrapper = styled.div`
     padding: 8px 0;
     h1 {
         font-size: 2.5rem;
-        margin: 0;
     }
     h2 {
-        margin: 0;
         color: gray;
     }
 `
