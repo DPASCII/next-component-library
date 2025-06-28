@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const libThemePath = path.resolve(__dirname, '../src/theme')
+const libThemePath = path.resolve(__dirname, '../theme')
 const projectSrcPath = path.resolve(
     process.env.npm_config_local_prefix || '',
     'src'
