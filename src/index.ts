@@ -1,3 +1,6 @@
 export { default as Button } from './components/Button'
 export { default as Header } from './components/Header'
 export { default as Card } from './components/Card'
+export { default as CardContainer } from './components/CardContainer'
+export { default as Footer } from './components/Footer'
+export { default as Jumbotron } from './components/Jumbotron'
