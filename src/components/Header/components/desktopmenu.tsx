@@ -49,9 +49,9 @@ const SubMenuWrapper = styled.div`
 export interface DesktopMenuProps {
     menuWidth?: number
     page: {
-        name: string
+        item: string
         link: string
-        subPages?: { subName: string; subLink: string }[]
+        subPages?: { subItem: string; subLink: string }[]
     }
 }
 
@@ -71,13 +71,13 @@ const DesktopMenu: React.FC<DesktopMenuProps> = (props) => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
-            <MenuItem $menuWidth={menuWidth}>{page.name}</MenuItem>
+            <MenuItem $menuWidth={menuWidth}>{page.item}</MenuItem>
             {isDropdownVisible && (
                 <SubMenuWrapper>
                     {page.subPages &&
                         page.subPages.map((subPages, index) => (
                             <SubMenuItem key={index} href={subPages.subLink}>
-                                {subPages.subName}
+                                {subPages.subItem}
                             </SubMenuItem>
                         ))}
                 </SubMenuWrapper>
